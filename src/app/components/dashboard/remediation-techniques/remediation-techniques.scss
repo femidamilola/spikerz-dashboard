@@ -1,0 +1,29 @@
+/* src/app/components/dashboard/remediation-techniques/remediation-techniques.component.scss */
+.remediation-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.remediation-column {
+  border: 2px dashed #d3d3d3;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.column-header h6 {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #5f6368;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

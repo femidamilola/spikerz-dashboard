@@ -1,0 +1,16 @@
+<div class="node-container">
+  <div class="node-circle" [class]="color()">
+    <div class="icon">
+      <app-custom-icon [label]="icon()" size="24px" />
+    </div>
+    @if (badge()) {
+    <app-badge [color]="badge()!.color" [icon]="badge()!.icon"></app-badge>
+    }
+  </div>
+  <div class="node-info">
+    <div class="title">{{ title() }}</div>
+    @if (ip()) {
+    <div class="ip">{{ ip() }}</div>
+    }
+  </div>
+</div>

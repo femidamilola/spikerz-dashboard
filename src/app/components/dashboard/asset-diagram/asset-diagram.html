@@ -1,0 +1,41 @@
+<div class="diagram-wrapper">
+  <div class="diagram">
+    @for (group of nodeGroups; track $index) {
+    <div class="node-group">
+      @for (node of group.nodes; track node.id) {
+      <app-node
+        [title]="node.title"
+        [color]="node.color"
+        [icon]="node.icon"
+        [badge]="node.badge"
+        [ip]="node.ip"
+      ></app-node>
+      }
+    </div>
+    @if ($index < nodeGroups.length - 1) {
+    <div
+      class="arrow-container {{
+        nodeGroups[$index + 1].nodes.length > 1
+          ? 'double-arrow'
+          : 'single-arrow'
+      }}"
+    >
+      <img [src]="getArrowType($index + 1)" alt="arrow" class="arrow" />
+    </div>
+    } }
+  </div>
+  <div class="diagram-legend">
+    <div class="legend-item critical">
+      <app-custom-icon label="shield_x" size="20px"></app-custom-icon>
+      <span>Lorem</span>
+    </div>
+    <div class="legend-item warning">
+      <app-custom-icon label="shield_x" size="20px"></app-custom-icon>
+      <span>Lorem</span>
+    </div>
+    <div class="legend-item low">
+      <app-custom-icon label="shield_x" size="20px"></app-custom-icon>
+      <span>Lorem</span>
+    </div>
+  </div>
+</div>

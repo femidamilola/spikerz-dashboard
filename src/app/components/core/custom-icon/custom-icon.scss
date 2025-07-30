@@ -1,0 +1,13 @@
+.custom-icon {
+  width: var(--custom-icon-size, 20px);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}

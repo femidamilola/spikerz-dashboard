@@ -1,0 +1,47 @@
+<aside [class.collapsed]="collapsed()" class="sidebar">
+  <button class="collapse-btn" (click)="toggleCollapse()">
+    <app-custom-icon label="chevron_left" />
+  </button>
+  <nav class="main-nav">
+    <ul>
+      @for (item of menuItems; track $index) {
+      <li>
+        <a routerLinkActive="active" [routerLink]="item.routerLink">
+          <app-custom-icon [label]="item.icon">{{ item.icon }}</app-custom-icon>
+          @if (!collapsed()) {
+          <span>{{ item.label }}</span>
+          }
+        </a>
+      </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="bottom-section">
+    <ul>
+      @for (item of settingsNavItems; track $index) {
+      <li>
+        <a [routerLink]="item.routerLink" routerLinkActive="active">
+          <app-custom-icon [label]="item.icon">{{ item.icon }}</app-custom-icon>
+          @if (!collapsed()) {
+          <span class="label">{{ item.label }}</span>
+          }
+        </a>
+      </li>
+      }
+    </ul>
+
+    <a routerLink="/profile" class="user-profile-stub">
+      <div class="avatar">
+        <img src="https://i.pravatar.cc/300" alt="User Avatar" />
+      </div>
+      @if (!collapsed()) {
+      <div class="user-info">
+        <span class="label">Lorem Ipsum</span>
+        <span class="label">Lorem Ipsum</span>
+      </div>
+      <app-custom-icon label="logout">logout</app-custom-icon>
+      }
+    </a>
+  </div>
+</aside>

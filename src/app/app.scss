@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #fafafa;
+}
+
+.content-area {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}

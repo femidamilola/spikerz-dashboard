@@ -1,0 +1,95 @@
+/* src/app/components/dashboard/risk-summary/risk-summary.scss */
+.risk-summary-card {
+  background: #fafbfc;
+  border-radius: 20px;
+  padding: 28px 32px 28px 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  min-height: 220px;
+}
+
+.risk-summary-header {
+  color: #6b7683;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.risk-summary-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.risk-summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.risk-summary-list li {
+  display: flex;
+  align-items: center;
+  color: #2d2e4a;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.risk-summary-list .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.risk-summary-list .critical {
+  background: #c62828;
+}
+.risk-summary-list .high {
+  background: #ff7043;
+}
+.risk-summary-list .medium {
+  background: #ffb300;
+}
+.risk-summary-list .low {
+  background: #43a047;
+}
+
+.risk-summary-list .count {
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.risk-summary-list .label {
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.risk-summary-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.risk-summary-circle svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.risk-summary-total {
+  position: relative;
+  font-size: 40px;
+  font-weight: 600;
+  color: #6b7683;
+  z-index: 1;
+}

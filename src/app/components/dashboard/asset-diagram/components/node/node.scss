@@ -1,0 +1,62 @@
+.node-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100px;
+}
+
+.node-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+
+  &.red {
+    background-color: #fff1f0;
+    color: #e5372b;
+  }
+
+  &.blue {
+    background-color: #d7eaff;
+    color: #1873de;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    app-custom-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.node-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+
+  .ip {
+    font-size: 0.625rem;
+    color: #6b7280;
+    line-height: 1;
+    margin-top: 0.125rem;
+  }
+}
