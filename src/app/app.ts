@@ -9,13 +9,15 @@ import { Sidebar } from './components/layout/sidebar/sidebar';
   styleUrl: './app.scss',
 })
 export class App {
+  private readonly MOBILE_BREAKPOINT = 768;
+
   isDrawerOpen = false;
-  isSidebarCollapsed = window.innerWidth < 768;
+  isSidebarCollapsed = window.innerWidth < this.MOBILE_BREAKPOINT;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     const target = event.target as Window;
-    this.isSidebarCollapsed = target.innerWidth < 768;
+    this.isSidebarCollapsed = target.innerWidth < this.MOBILE_BREAKPOINT;
   }
 
   toggleDrawer() {

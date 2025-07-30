@@ -1,16 +1,22 @@
 import { Component, input } from '@angular/core';
 import { CustomIcon } from '../../core/custom-icon/custom-icon';
 
+type InfoListItem = {
+  label: string;
+  value: string;
+  icon?: string;
+};
+
 @Component({
   selector: 'app-extra',
   imports: [CustomIcon],
   templateUrl: './extra.html',
   styleUrl: './extra.scss',
 })
-export class Extra {
+export class AdditionalInformation {
   content = input.required<string>();
 
-  infoList = [
+  informationList: InfoListItem[] = [
     { label: 'Lorem Ipsum Dolor', value: '10/19/2017' },
     { label: 'Lorem Ipsum Dolor', value: 'Ut' },
     { label: 'Lorem Ipsum Dolor', value: 'Eros' },

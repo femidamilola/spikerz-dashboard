@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 import { Description } from '../../components/dashboard/description/description';
-import { Extra } from '../../components/dashboard/extra/extra';
+import { AdditionalInformation } from '../../components/dashboard/extra/extra';
 import { AssetFlow } from '../../components/dashboard/asset-flow/asset-flow';
 import { ContextualRisk } from '../../components/dashboard/contextual-risk/contextual-risk';
 import { RiskSummary } from '../../components/dashboard/risk-summary/risk-summary';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Description, Extra, AssetFlow, ContextualRisk, RiskSummary],
+  imports: [
+    Description,
+    AdditionalInformation,
+    AssetFlow,
+    ContextualRisk,
+    RiskSummary,
+  ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

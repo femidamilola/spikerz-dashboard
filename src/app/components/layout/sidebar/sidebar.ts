@@ -2,11 +2,11 @@ import { Component, input, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CustomIcon } from '../../core/custom-icon/custom-icon';
 
-interface NavItem {
+type NavItem = {
   label: string;
   icon: string;
   routerLink: string;
-}
+};
 
 @Component({
   selector: 'app-sidebar',
