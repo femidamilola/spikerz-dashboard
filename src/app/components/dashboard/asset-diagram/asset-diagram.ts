@@ -90,8 +90,24 @@ export class AssetDiagram {
 
     let rawSvg =
       targetNodeCount > 1
-        ? `<svg _ngcontent-ng-c103761173="" width="350" height="220" viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg"><defs _ngcontent-ng-c103761173=""><marker _ngcontent-ng-c103761173="" id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon _ngcontent-ng-c103761173="" points="0 0, 10 3.5, 0 7" fill="#7c8698"></polygon></marker></defs><path _ngcontent-ng-c103761173="" d="M 0 110 Q 90 110, 130 110" stroke="#7c8698" stroke-width="2" fill="none"></path><path _ngcontent-ng-c103761173="" d="M 130 110 C 160 110, 170 40, 200 40 L 330 40" stroke="#7c8698" stroke-width="2" fill="none" marker-end="url(#arrowhead)"></path><path _ngcontent-ng-c103761173="" d="M 130 110 C 160 110, 170 180, 200 180 L 330 180" stroke="#7c8698" stroke-width="2" fill="none" marker-end="url(#arrowhead)"></path></svg>`
-        : '<svg _ngcontent-ng-c103761173="" width="120" height="20" viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg"><defs _ngcontent-ng-c103761173=""><marker _ngcontent-ng-c103761173="" id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon _ngcontent-ng-c103761173="" points="0 0, 10 3.5, 0 7" fill="#7c8698"></polygon></marker></defs><line _ngcontent-ng-c103761173="" x1="0" y1="10" x2="110" y2="10" stroke="#7c8698" stroke-width="2" marker-end="url(#arrowhead)"></line></svg>';
+        ? `<svg width="350" height="220" viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
+             <defs>
+               <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                 <polygon points="0 0, 10 3.5, 0 7" fill="#7c8698"></polygon>
+               </marker>
+             </defs>
+             <path d="M 0 110 Q 90 110, 130 110" stroke="#7c8698" stroke-width="2" fill="none"></path>
+             <path d="M 130 110 C 160 110, 170 40, 200 40 L 330 40" stroke="#7c8698" stroke-width="2" fill="none" marker-end="url(#arrowhead)"></path>
+             <path d="M 130 110 C 160 110, 170 180, 200 180 L 330 180" stroke="#7c8698" stroke-width="2" fill="none" marker-end="url(#arrowhead)"></path>
+           </svg>`
+        : `<svg width="120" height="20" viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
+             <defs>
+               <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                 <polygon points="0 0, 10 3.5, 0 7" fill="#7c8698"></polygon>
+               </marker>
+             </defs>
+             <line x1="0" y1="10" x2="110" y2="10" stroke="#7c8698" stroke-width="2" marker-end="url(#arrowhead)"></line>
+           </svg>`;
 
     return this.sanitizer.bypassSecurityTrustHtml(rawSvg);
   }

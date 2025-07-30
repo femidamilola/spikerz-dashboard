@@ -13,8 +13,9 @@ export class App {
   isSidebarCollapsed = window.innerWidth < 768;
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.isSidebarCollapsed = event.target.innerWidth < 768;
+  onResize(event: Event) {
+    const target = event.target as Window;
+    this.isSidebarCollapsed = target.innerWidth < 768;
   }
 
   toggleDrawer() {

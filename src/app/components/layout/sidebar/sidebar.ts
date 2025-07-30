@@ -31,7 +31,6 @@ export class Sidebar {
     { label: 'Lorem', icon: 'notifications', routerLink: '/alerts' },
   ];
 
-  // Bottom navigation items
   settingsNavItems: NavItem[] = [
     { label: 'Lorem', icon: 'settings', routerLink: '/settings' },
     { label: 'Lorem', icon: 'help_outline', routerLink: '/help' },
