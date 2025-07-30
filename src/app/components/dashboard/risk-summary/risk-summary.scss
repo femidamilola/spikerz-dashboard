@@ -1,8 +1,8 @@
 .risk-summary-header {
-  color: #6b7683;
-  font-size: 24px;
+  color: #667085;
+  font-size: 18px;
   font-weight: 500;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .risk-summary-content {
@@ -18,11 +18,13 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+  align-items: space-between;
 }
 
 .risk-summary-list li {
   display: flex;
+
   align-items: center;
   color: #2d2e4a;
   font-size: 18px;
@@ -76,8 +78,8 @@
 
 .risk-summary-total {
   position: relative;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 600;
-  color: #6b7683;
+  color: #656575;
   z-index: 1;
 }
