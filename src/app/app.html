@@ -1,13 +1,6 @@
-<!-- src/app/app.component.html -->
 <div class="app-container" [class.sidebar-collapsed]="isSidebarCollapsed">
   <app-sidebar></app-sidebar>
   <main class="content-area">
-    <!-- <app-header (toggleSidebar)="toggleSidebar()"></app-header> -->
     <router-outlet></router-outlet>
   </main>
-  <!-- <app-vulnerabilities-drawer
-    [isOpen]="isDrawerOpen$ | async"
-    (drawerClosed)="closeDrawer()"
-  >
-  </app-vulnerabilities-drawer> -->
 </div>
