@@ -4,14 +4,15 @@ import {
   Asset,
   DashboardStateService,
 } from '../../../services/dashboard-state';
+import { CustomIcon } from '../../core/custom-icon/custom-icon';
 
 @Component({
   selector: 'app-contextual-risk',
   templateUrl: './contextual-risk.html',
   styleUrls: ['./contextual-risk.scss'],
+  imports: [CustomIcon],
 })
 export class ContextualRisk {
-  // Mock data
   risks: Asset[] = [
     {
       name: 'Loremipsumdolorsit',

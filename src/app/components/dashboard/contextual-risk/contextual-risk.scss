@@ -1,128 +1,114 @@
 /* src/app/components/dashboard/contextual-risk/contextual-risk.component.scss */
 .contextual-risk-container {
+  overflow: auto;
   background: white;
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-  .table-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e8eaed;
+  .risk-table {
+    width: 100%;
+    border-collapse: collapse;
 
-    .header-asset,
-    .header-risk {
-      font-size: 14px;
-      font-weight: 500;
-      color: #5f6368;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    thead {
+      th {
+        font-size: 14px;
+        font-weight: 500;
+        color: #5f6368;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e8eaed;
+        text-align: left;
+
+        &.header-risk {
+          text-align: center;
+        }
+      }
     }
 
-    .header-asset {
-      flex: 1;
-    }
+    tbody {
+      .asset-item {
+        cursor: pointer;
+        transition: background-color 0.2s ease;
 
-    .header-risk {
-      text-align: right;
+        &:hover {
+          background-color: #f8f9fa;
+        }
+
+        td {
+          padding: 16px 0;
+          border-bottom: 1px solid #f1f3f4;
+        }
+      }
     }
   }
 
-  .assets-list {
+  .asset-content {
     display: flex;
-    flex-direction: column;
-    gap: 1px;
+    align-items: center;
+    gap: 16px;
 
-    .asset-item {
+    .asset-icon {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-      border-bottom: 1px solid #f1f3f4;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #f8f9ff;
+      border-radius: 50%;
 
-      &:hover {
-        background-color: #f8f9fa;
-        margin: 0 -24px;
-        padding-left: 24px;
-        padding-right: 24px;
-        border-radius: 8px;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .asset-details {
+      .asset-name {
+        font-size: 16px;
+        font-weight: 500;
+        color: #1a1a1a;
+        margin-bottom: 4px;
       }
 
-      &:last-child {
-        border-bottom: none;
+      .asset-ip {
+        font-size: 14px;
+        color: #5f6368;
       }
+    }
+  }
 
-      .asset-content {
-        display: flex;
-        align-items: center;
-        gap: 16px;
+  .risk-badge {
+    justify-self: center;
+    .risk-level {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
 
-        .asset-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 40px;
-          height: 40px;
-          background: #f8f9ff;
-          border-radius: 8px;
+      &.critical {
+        background: #fce8e6;
+        color: #d73527;
 
-          svg {
-            width: 24px;
-            height: 24px;
-          }
-        }
-
-        .asset-details {
-          .asset-name {
-            font-size: 16px;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-          }
-
-          .asset-ip {
-            font-size: 14px;
-            color: #5f6368;
-          }
+        strong {
+          font-weight: 700;
         }
       }
 
-      .risk-badge {
-        .risk-level {
-          padding: 6px 16px;
-          border-radius: 20px;
-          font-size: 14px;
-          font-weight: 600;
+      &.high {
+        background: #fef7e0;
+        color: #f9ab00;
+      }
 
-          &.critical {
-            background: #fce8e6;
-            color: #d73527;
+      &.medium {
+        background: #e8f0fe;
+        color: #1a73e8;
+      }
 
-            strong {
-              font-weight: 700;
-            }
-          }
-
-          &.high {
-            background: #fef7e0;
-            color: #f9ab00;
-          }
-
-          &.medium {
-            background: #e8f0fe;
-            color: #1a73e8;
-          }
-
-          &.low {
-            background: #e6f4ea;
-            color: #137333;
-          }
-        }
+      &.low {
+        background: #e6f4ea;
+        color: #137333;
       }
     }
   }
