@@ -18,16 +18,16 @@
     .main-nav ul li span,
     .bottom-section ul li span,
     .bottom-section .user-info,
-    .bottom-section app-custom-icon {
-      display: none;
-    }
-
     nav ul li > a {
       width: fit-content;
     }
 
     .collapse-btn app-custom-icon {
       transform: rotate(180deg);
+    }
+
+    .user-profile-stub {
+      justify-content: center;
     }
   }
 
@@ -127,20 +127,21 @@
           font-size: 0.875rem;
           line-height: 1.2;
 
-          &:first-child {
-            font-weight: 500;
-          }
-
-          &:last-child {
-            color: #6b7280;
-            font-size: 0.75rem;
-          }
+          color: #6b7280;
         }
       }
 
       .logout-icon {
         margin-left: auto;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .sidebar {
+    .collapse-btn {
+      display: none;
     }
   }
 }

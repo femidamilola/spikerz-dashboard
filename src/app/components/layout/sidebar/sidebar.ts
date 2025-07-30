@@ -17,7 +17,7 @@ interface NavItem {
 export class Sidebar {
   userName = input<string>('User Name');
 
-  collapsed = signal<boolean>(false);
+  collapsed = signal<boolean>(true);
   toggleCollapse() {
     this.collapsed.set(!this.collapsed());
   }

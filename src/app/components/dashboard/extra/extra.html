@@ -1,5 +1,22 @@
 <div class="extra">
   <h2>Extra</h2>
   <p>{{ content() }}</p>
-  table will go here
+
+  <section class="info-table">
+    <table>
+      <tbody>
+        @for (item of infoList; track item.label) {
+        <tr>
+          <td class="info-label">{{ item.label }}</td>
+          <td class="info-value">
+            @if (item.icon) {
+            <app-custom-icon [label]="item.icon" />
+            }
+            {{ item.value }}
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </section>
 </div>

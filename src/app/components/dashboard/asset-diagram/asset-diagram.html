@@ -19,9 +19,8 @@
           ? 'double-arrow'
           : 'single-arrow'
       }}"
-    >
-      <img [src]="getArrowType($index + 1)" alt="arrow" class="arrow" />
-    </div>
+      [innerHTML]="getArrowType($index + 1)"
+    ></div>
     } }
   </div>
   <div class="diagram-legend">
