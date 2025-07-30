@@ -1,4 +1,3 @@
-// src/app/components/dashboard/contextual-risk/contextual-risk.component.ts
 import { Component } from '@angular/core';
 import {
   Asset,
@@ -9,7 +8,7 @@ import { CustomIcon } from '../../core/custom-icon/custom-icon';
 @Component({
   selector: 'app-contextual-risk',
   templateUrl: './contextual-risk.html',
-  styleUrls: ['./contextual-risk.scss'],
+  styleUrl: './contextual-risk.scss',
   imports: [CustomIcon],
 })
 export class ContextualRisk {

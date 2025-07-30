@@ -3,7 +3,7 @@ export const ICON_REGISTRY: Record<string, string> = {
 <path d="M6.4 12.4L1 6.99998L6.4 1.59998" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `,
-  // Sidebar Icons
+
   dashboard: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.83333 0.5V5.5H15.5V0.5M8.83333 15.5H15.5V7.16667H8.83333M0.5 15.5H7.16667V10.5H0.5M0.5 8.83333H7.16667V0.5H0.5V8.83333Z" fill="currentColor"/>
 </svg>
@@ -60,7 +60,7 @@ export const ICON_REGISTRY: Record<string, string> = {
 <path d="M8.46967 6.21967C8.76256 5.92678 9.23744 5.92678 9.53033 6.21967L11.7803 8.46967C12.0732 8.76256 12.0732 9.23744 11.7803 9.53033L9.53033 11.7803C9.23744 12.0732 8.76256 12.0732 8.46967 11.7803C8.17678 11.4874 8.17678 11.0126 8.46967 10.7197L9.43934 9.75H3C2.58579 9.75 2.25 9.41422 2.25 9C2.25 8.58579 2.58579 8.25 3 8.25H9.43934L8.46967 7.28033C8.17678 6.98744 8.17678 6.51256 8.46967 6.21967Z" fill="#333333"/>
 </svg>
 `,
-  // Asset Diagram Icons
+
   mask: `<svg width="24" height="15" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.16675 6.45988C1.16675 7.89647 1.73743 9.27422 2.75325 10.29C3.76908 11.3059 5.14683 11.8765 6.58342 11.8765C8.5851 11.9511 10.4992 12.7167 12.0001 14.0432C13.501 12.7167 15.4151 11.9511 17.4167 11.8765C18.8533 11.8765 20.2311 11.3059 21.2469 10.29C22.2627 9.27422 22.8334 7.89647 22.8334 6.45988V1.04321H17.4167C15.4151 1.11777 13.501 1.8834 12.0001 3.20988C10.4992 1.8834 8.5851 1.11777 6.58342 1.04321H1.16675V6.45988Z" stroke="currentColor" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M5.50008 5.37655C7.12508 5.37655 8.75008 5.91821 8.75008 7.54321C6.58342 7.54321 5.50008 7.54321 5.50008 5.37655Z" stroke="currentColor" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>

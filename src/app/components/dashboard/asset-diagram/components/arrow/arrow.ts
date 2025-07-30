@@ -12,7 +12,6 @@ export class Arrow {
   isMultiple = input<boolean>(false);
 
   getArrowImage() {
-    // Use double arrow when the source node has multiple connections
     return this.isMultiple() ? '/images/arrow-double.png' : '/images/arrow.png';
   }
 }
