@@ -3,11 +3,11 @@
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #02983e;
+    color: var(--color-primary-light);
   }
 
   p {
     line-height: 1.6;
-    color: #525d73;
+    color: var(--color-text-primary);
   }
 }

@@ -24,7 +24,7 @@ export type NodeGroup = {
   styleUrl: './asset-diagram.scss',
 })
 export class AssetDiagram {
-  private readonly ARROW_COLOR = '#7c8698';
+  private readonly ARROW_COLOR = 'var(--color-arrow)';
   private readonly ARROW_STROKE_WIDTH = '2';
   private readonly DEFAULT_ARROW_IMAGE = '/images/arrow.png';
   private readonly SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
