@@ -1,4 +1,4 @@
-<div class="dashboard">
+<div class="dashboard" [class.sidebar-collapsed]="isSidebarCollapsed()">
   <div class="left-panel">
     <app-description [content]="description"></app-description>
     <app-extra [content]="extra"></app-extra>

@@ -6,7 +6,12 @@
     <ul>
       @for (item of menuItems; track $index) {
       <li>
-        <a routerLinkActive="active" [routerLink]="item.routerLink">
+        <a
+          routerLinkActive="active"
+          [routerLink]="item.routerLink"
+          [attr.data-tooltip]="item.label"
+          class="nav-link"
+        >
           <app-custom-icon [label]="item.icon">{{ item.icon }}</app-custom-icon>
           @if (!collapsed()) {
           <span>{{ item.label }}</span>
@@ -21,7 +26,12 @@
     <ul>
       @for (item of settingsNavItems; track $index) {
       <li>
-        <a [routerLink]="item.routerLink" routerLinkActive="active">
+        <a
+          [routerLink]="item.routerLink"
+          routerLinkActive="active"
+          [attr.data-tooltip]="item.label"
+          class="nav-link"
+        >
           <app-custom-icon [label]="item.icon">{{ item.icon }}</app-custom-icon>
           @if (!collapsed()) {
           <span class="label">{{ item.label }}</span>
@@ -31,7 +41,11 @@
       }
     </ul>
 
-    <a routerLink="/profile" class="user-profile-stub">
+    <a
+      routerLink="/profile"
+      class="user-profile-stub"
+      [attr.data-tooltip]="'Profile'"
+    >
       <div class="avatar">
         <img src="/images/person.png" alt="User Avatar" />
       </div>

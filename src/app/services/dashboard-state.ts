@@ -11,12 +11,19 @@ export type Asset = {
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardStateService {
+export class DashboardState {
   private readonly _isDrawerOpen = new BehaviorSubject<boolean>(false);
   readonly isDrawerOpen$ = this._isDrawerOpen.asObservable();
 
   private readonly _selectedAsset = new BehaviorSubject<Asset | null>(null);
   readonly selectedAsset$ = this._selectedAsset.asObservable();
+
+  private readonly _isSidebarCollapsed = new BehaviorSubject<boolean>(false);
+  readonly isSidebarCollapsed$ = this._isSidebarCollapsed.asObservable();
+
+  setSidebarCollapsed(collapsed: boolean) {
+    this._isSidebarCollapsed.next(collapsed);
+  }
 
   openDrawerWithAsset(asset: Asset) {
     this._selectedAsset.next(asset);

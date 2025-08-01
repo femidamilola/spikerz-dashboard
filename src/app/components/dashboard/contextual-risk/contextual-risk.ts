@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  Asset,
-  DashboardStateService,
-} from '../../../services/dashboard-state';
+import { Asset, DashboardState } from '../../../services/dashboard-state';
 import { CustomIcon } from '../../core/custom-icon/custom-icon';
 
 @Component({
@@ -27,7 +24,7 @@ export class ContextualRisk {
     },
   ];
 
-  constructor(private dashboardStateService: DashboardStateService) {}
+  constructor(private dashboardStateService: DashboardState) {}
 
   onAssetClick(asset: Asset) {
     this.dashboardStateService.openDrawerWithAsset(asset);

@@ -17,6 +17,7 @@
   /* Border Colors */
   --color-border-light: #eee;
   --color-border-medium: #e4e7ec;
+  --color-border-medium-dark: #e0e2e7;
   --color-border-dark: #e0e0e0;
 
   /* Status Colors */
@@ -40,6 +41,7 @@
   --color-arrow: #7c8698;
   --color-sidebar-active: #00732e;
   --color-sidebar-hover: #f0f0f0;
+  --color-info-card-divider: #858d9d;
 
   /* Shadow Colors */
   --shadow-light: rgba(0, 0, 0, 0.1);
@@ -56,4 +58,8 @@ body {
   font-weight: 400;
   font-style: normal;
   color: var(--color-text-primary);
+}
+
+body {
+  overflow: hidden;
 }

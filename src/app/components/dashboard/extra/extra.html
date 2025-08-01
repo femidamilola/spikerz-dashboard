@@ -19,4 +19,12 @@
       </tbody>
     </table>
   </section>
+
+  <!-- Cards Section -->
+  <h3>Lorem Ipsum Dolor Sit</h3>
+  <section class="cards-section">
+    @for (card of cards; track $index) {
+    <app-info-card [content]="card" />
+    }
+  </section>
 </div>

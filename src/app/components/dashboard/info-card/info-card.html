@@ -1,0 +1,36 @@
+<div
+  class="info-card row-layout"
+  [class.clickable]="isClickable()"
+  [class.expanded]="isExpanded()"
+  (click)="toggleExpanded()"
+>
+  <div class="card-container">
+    <h3 class="card-title">{{ content().title }}</h3>
+
+    <div class="card-content">
+      <div class="icon-section">
+        <div class="icon-container">
+          <app-custom-icon [label]="content().icon" size="32px">{{
+            content().icon
+          }}</app-custom-icon>
+        </div>
+        <div class="icon-text">
+          <span class="primary-text">{{ content().title2 }}</span>
+          <span class="secondary-text">{{ content().subtitle }}</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="description">
+        {{ content().content }}
+      </div>
+    </div>
+  </div>
+
+  @if (hasDescription()) {
+  <div class="additional-content-container" [class.expanded]="isExpanded()">
+    <div class="additional-content">
+      {{ content().description }}
+    </div>
+  </div>
+  }
+</div>

@@ -71,6 +71,7 @@
       transition: background 0.2s;
       border-radius: 8px;
       margin: 0.25rem 0.75rem;
+      position: relative;
 
       app-custom-icon {
         color: var(--color-text-muted);
@@ -89,6 +90,42 @@
           color: #000000;
         }
       }
+    }
+  }
+
+  &.collapsed {
+    .nav-link[data-tooltip]:hover::after,
+    .user-profile-stub[data-tooltip]:hover::after {
+      display: inline-block;
+      content: attr(data-tooltip);
+      position: absolute;
+      left: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--color-primary-lightest, #333);
+      color: black;
+      padding: 4px 6px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      pointer-events: none;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .nav-link[data-tooltip]:hover::before,
+    .user-profile-stub[data-tooltip]:hover::before {
+      content: "";
+      position: absolute;
+      left: calc(100% + 6px);
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-right-color: var(--color-text-primary, #333);
+      z-index: 1000;
+      pointer-events: none;
     }
   }
 
