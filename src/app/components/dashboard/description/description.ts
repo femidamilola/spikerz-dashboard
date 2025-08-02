@@ -1,4 +1,5 @@
 import { Component, input } from '@angular/core';
+import { I18nService } from '../../../services/i18n.service';
 
 @Component({
   selector: 'app-description',
@@ -8,4 +9,6 @@ import { Component, input } from '@angular/core';
 })
 export class Description {
   content = input.required<string>();
+
+  constructor(public i18nService: I18nService) {}
 }

@@ -2,8 +2,12 @@
   <table class="risk-table">
     <thead>
       <tr>
-        <th class="header-asset">Asset</th>
-        <th class="header-risk">Contextual Risk</th>
+        <th class="header-asset">
+          {{ i18nService.contextualRisk.table_headers.asset }}
+        </th>
+        <th class="header-risk">
+          {{ i18nService.contextualRisk.table_headers.contextual_risk }}
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +26,27 @@
         </td>
         <td>
           <div class="risk-badge">
-            <span class="risk-level critical"><strong>Critical</strong></span>
+            <span
+              class="risk-level"
+              [class.critical]="risk.isCritical"
+              [class.high]="!risk.isCritical && risk.vulnerabilities.length > 2"
+              [class.medium]="
+                !risk.isCritical && risk.vulnerabilities.length === 2
+              "
+              [class.low]="
+                !risk.isCritical && risk.vulnerabilities.length === 1
+              "
+            >
+              @if (risk.isCritical) {
+              <strong>Critical</strong>
+              } @else if (risk.vulnerabilities.length > 2) {
+              <strong>High</strong>
+              } @else if (risk.vulnerabilities.length === 2) {
+              <strong>Medium</strong>
+              } @else {
+              <strong>Low</strong>
+              }
+            </span>
           </div>
         </td>
       </tr>
@@ -31,22 +55,34 @@
   </table>
 
   <div class="pagination">
-    <button class="pagination-btn" disabled>
+    <button
+      class="pagination-btn"
+      [disabled]="!canGoToPrevious"
+      (click)="previousPage()"
+    >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path
           d="M10 12L6 8L10 4"
-          stroke="#9aa0a6"
+          [attr.stroke]="canGoToPrevious ? '#525d73' : '#9aa0a6'"
           stroke-width="2"
           stroke-linecap="round"
         />
       </svg>
     </button>
-    <span class="pagination-text">Showing 1-2 of 2</span>
-    <button class="pagination-btn" disabled>
+    <span class="pagination-text">
+      {{ i18nService.contextualRisk.pagination.showing }}
+      {{ startItem }}-{{ endItem }}
+      {{ i18nService.contextualRisk.pagination.of }} {{ totalItems }}
+    </span>
+    <button
+      class="pagination-btn"
+      [disabled]="!canGoToNext"
+      (click)="nextPage()"
+    >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path
           d="M6 4L10 8L6 12"
-          stroke="#9aa0a6"
+          [attr.stroke]="canGoToNext ? '#525d73' : '#9aa0a6'"
           stroke-width="2"
           stroke-linecap="round"
         />

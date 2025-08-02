@@ -1,3 +1,5 @@
+@use "../../../constants/breakpoints" as *;
+
 .extra {
   h2 {
     font-size: 1.25rem;
@@ -79,14 +81,75 @@
   }
 }
 
-@media (max-width: 480px) {
-  .info-table {
-    table {
-      tr {
+/* Enhanced mobile optimizations */
+@media screen and (max-width: $breakpoint-md) {
+  .extra {
+    h2 {
+      font-size: 1.125rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .info-table {
+      margin: 24px 0 8px 0;
+      padding: 0.75rem 0;
+
+      table tr {
+        font-size: 14px;
+        gap: 12px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .cards-section {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .extra {
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 13px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .info-table {
+      margin: 20px 0 6px 0;
+      padding: 0.5rem 0;
+
+      table tr {
+        font-size: 12px;
+        gap: 8px;
+        margin-bottom: 0.375rem;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.25rem;
       }
+    }
+
+    .cards-section {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
     }
   }
 }

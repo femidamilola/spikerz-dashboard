@@ -1,5 +1,6 @@
 .custom-icon {
-  width: var(--custom-icon-size, 20px);
+  width: var(--custom-icon-size);
+  height: var(--custom-icon-size);
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;

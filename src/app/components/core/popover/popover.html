@@ -1,0 +1,76 @@
+<div
+  #popover
+  class="popover"
+  [class.visible]="isVisible()"
+  [class.vulnerability-popover]="data().type === 'vulnerability'"
+  [class.normal-popover]="data().type === 'normal'"
+>
+  <div class="popover-content">
+    @if (data().type === 'vulnerability') {
+    <!-- Vulnerability Popover Layout -->
+    <div class="vulnerability-popover-content">
+      <!-- Red Header -->
+      <div class="vulnerability-header-section">
+        <h4 class="vulnerability-title">{{ data().title }}</h4>
+      </div>
+
+      <!-- Vulnerability Data Grid -->
+      <div class="vulnerability-data-grid">
+        @if (data().additionalInfo && data().additionalInfo!.length > 0) { @for
+        (info of data().additionalInfo; track info.label) {
+        <div class="vulnerability-data-item">
+          {{ info.value }}
+        </div>
+        } }
+      </div>
+
+      <!-- Blue Footer -->
+      <div class="vulnerability-footer-section">
+        <span class="vulnerability-footer-text">{{ data().content }}</span>
+      </div>
+    </div>
+    } @else {
+    <!-- Normal Popover Layout -->
+    <div class="normal-popover-content">
+      <!-- Header -->
+      <div class="normal-header">
+        <div class="header-icon-wrapper">
+          <div class="header-icon">
+            <app-custom-icon label="server" size="24px" />
+          </div>
+          @if (data().badge) {
+          <app-badge
+            [color]="data().badge!.color"
+            [icon]="data().badge!.icon"
+          ></app-badge>
+          }
+        </div>
+        <div class="header-info">
+          <h4 class="normal-title">{{ data().title }}</h4>
+          @if (data().content) {
+          <div class="normal-subtitle">{{ data().content }}</div>
+          }
+        </div>
+      </div>
+
+      <!-- Content Rows -->
+      <div class="normal-content">
+        @if (data().additionalInfo && data().additionalInfo!.length > 0) {
+        <app-custom-icon label="info" size="16px" class="row-icon" />
+        @for (info of data().additionalInfo; track info.label) {
+        <div class="content-row">
+          <app-custom-icon label="file_text" size="16px" class="row-icon" />
+          <span
+            class="row-content"
+            [innerHTML]="getSafeHtml(info.value)"
+          ></span>
+        </div>
+        } }
+      </div>
+    </div>
+    }
+  </div>
+
+  <!-- Arrow -->
+  <!-- <div #arrow class="popover-arrow"></div> -->
+</div>

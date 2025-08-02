@@ -44,15 +44,15 @@
     <a
       routerLink="/profile"
       class="user-profile-stub"
-      [attr.data-tooltip]="'Profile'"
+      [attr.data-tooltip]="i18nService.nav.profile"
     >
       <div class="avatar">
         <img src="/images/person.png" alt="User Avatar" />
       </div>
       @if (!collapsed()) {
       <div class="user-info">
-        <span class="label">Lorem</span>
-        <span class="label">Lorem</span>
+        <span class="label">{{ i18nService.nav.user_name_1 }}</span>
+        <span class="label">{{ i18nService.nav.user_name_2 }}</span>
       </div>
       <app-custom-icon label="logout">logout</app-custom-icon>
       }

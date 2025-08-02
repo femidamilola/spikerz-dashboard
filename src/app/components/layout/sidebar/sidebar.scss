@@ -1,3 +1,5 @@
+@use "../../../constants/breakpoints" as *;
+
 :host {
   position: relative;
 }
@@ -175,10 +177,161 @@
   }
 }
 
-@media screen and (max-width: 660px) {
+/* Mobile optimizations - Complete rewrite for mobile */
+@media screen and (max-width: $breakpoint-md) {
   .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-light);
+    overflow: visible;
+
     .collapse-btn {
       display: none;
+    }
+
+    .main-nav {
+      padding: 0;
+      flex: 1;
+      max-width: none;
+      overflow: visible;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        li {
+          flex-shrink: 0;
+
+          > a {
+            padding: 0.5rem 0.75rem;
+            margin: 0;
+            border-radius: 6px;
+            flex-direction: column;
+            gap: 0.125rem;
+            text-align: center;
+            min-width: auto;
+            white-space: nowrap;
+
+            span {
+              font-size: 0.75rem;
+              line-height: 1;
+              display: block;
+            }
+
+            app-custom-icon {
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-section {
+      margin: 0;
+      flex-shrink: 0;
+
+      ul {
+        display: none;
+      }
+
+      .user-profile-stub {
+        padding: 0.5rem;
+        border-top: none;
+        gap: 0.5rem;
+
+        .avatar {
+          width: 28px;
+          height: 28px;
+        }
+
+        .user-info {
+          display: none;
+        }
+
+        .logout-icon {
+          margin: 0;
+        }
+      }
+    }
+
+    &.collapsed {
+      width: 100vw;
+
+      .main-nav ul li span {
+        display: block;
+      }
+
+      .collapse-btn app-custom-icon {
+        transform: none;
+      }
+
+      .user-profile-stub {
+        justify-content: flex-start;
+      }
+    }
+
+    /* Remove tooltips on mobile */
+    .nav-link[data-tooltip]:hover::after,
+    .nav-link[data-tooltip]:hover::before,
+    .user-profile-stub[data-tooltip]:hover::after,
+    .user-profile-stub[data-tooltip]:hover::before {
+      display: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+  .sidebar {
+    height: 50px;
+
+    .main-nav {
+      max-width: 75%;
+      ul {
+        gap: 0.125rem;
+
+        li > a {
+          padding: 0.25rem 0.5rem;
+
+          span {
+            font-size: 0.625rem;
+          }
+
+          app-custom-icon {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .bottom-section .user-profile-stub {
+      padding: 0.25rem;
+
+      .avatar {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 }

@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
-export type Asset = {
-  name: string;
-  ip: string;
-  isCritical: boolean;
-  vulnerabilities: string[];
-};
+import { Asset } from '../constants/app-constants';
 
 @Injectable({
   providedIn: 'root',

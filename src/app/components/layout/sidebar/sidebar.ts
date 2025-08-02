@@ -2,12 +2,12 @@ import { Component, input, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CustomIcon } from '../../core/custom-icon/custom-icon';
 import { DashboardState } from '../../../services/dashboard-state';
-
-type NavItem = {
-  label: string;
-  icon: string;
-  routerLink: string;
-};
+import { I18nService } from '../../../services/i18n.service';
+import {
+  NavItem,
+  NAV_MENU_ITEMS,
+  NAV_SETTINGS_ITEMS,
+} from '../../../constants/app-constants';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,7 +20,10 @@ export class Sidebar {
 
   collapsed = signal<boolean>(false);
 
-  constructor(private dashboardState: DashboardState) {}
+  constructor(
+    private dashboardState: DashboardState,
+    public i18nService: I18nService
+  ) {}
 
   toggleCollapse() {
     const newCollapsedState = !this.collapsed();
@@ -28,22 +31,19 @@ export class Sidebar {
     this.dashboardState.setSidebarCollapsed(newCollapsedState);
   }
 
-  menuItems: NavItem[] = [
-    { label: 'Lorem', icon: 'dashboard', routerLink: '/dashboard' },
-    { label: 'Lorem', icon: 'bug', routerLink: '/assets' },
-    { label: 'Lorem', icon: 'wysiwyg', routerLink: '/reports' },
-    {
-      label: 'Vulnerabilities',
-      icon: 'vulnerabilities',
-      routerLink: '/vulnerabilities',
-    },
-    { label: 'Integration', icon: 'integration', routerLink: '/remediations' },
-    { label: 'Report', icon: 'report', routerLink: '/report' },
-    { label: 'Help', icon: 'help_outline', routerLink: '/help' },
-  ];
+  get menuItems(): NavItem[] {
+    const nav = this.i18nService.nav;
+    return NAV_MENU_ITEMS.map((item) => ({
+      ...item,
+      label: this.i18nService.getText(item.key || ''),
+    }));
+  }
 
-  settingsNavItems: NavItem[] = [
-    { label: 'Settings', icon: 'settings', routerLink: '/settings' },
-    { label: 'Alerts', icon: 'notifications', routerLink: '/alerts' },
-  ];
+  get settingsNavItems(): NavItem[] {
+    const nav = this.i18nService.nav;
+    return NAV_SETTINGS_ITEMS.map((item) => ({
+      ...item,
+      label: this.i18nService.getText(item.key || ''),
+    }));
+  }
 }

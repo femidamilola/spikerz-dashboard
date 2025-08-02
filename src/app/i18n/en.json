@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "assets": "Lorem",
+    "reports": "Lorem",
+    "vulnerabilities": "Vulnerabilities",
+    "integration": "Integration",
+    "report": "Report",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "alerts": "Alerts",
+    "profile": "Profile",
+    "user_name_1": "Lorem",
+    "user_name_2": "Lorem"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "lorem_ipsum_dolor_sit": "Lorem Ipsum Dolor Sit",
+    "lorem_lorem_lorem": "Lorem Lorem Lorem"
+  },
+  "description": {
+    "title": "Description",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+  },
+  "extra": {
+    "title": "Extra",
+    "subtitle": "Lorem Ipsum Dolor Sit",
+    "content": "Lorem ipsum dolor sit amet consectetur. Tempus a id adipiscing fames egestas tellus dis pretium tempus. Justo nisl nisl lorem lectus id ornare. Rhoncus in egestas in amet porttitor pellentesque sit. Amet gravida integer velit felis. Eu consectetur interdum auctor sed aliquam. Eu pulvinar accumsan sed id. Duis a aliquam eu quisque commodo lectus. Lectus ipsum velit purus viverra vulputate viverra in nunc nulla. Euismod rhoncus mauris urna orci gravida sagittis netus. Amet mus in vel etiam. Interdum habitant congue massa in etiam sit. Commodo nibh viverra lobortis augue lorem quam lorem suspendisse.",
+    "info": {
+      "label1": "Lorem Ipsum Dolor",
+      "label2": "Lorem Ipsum Dolor",
+      "label3": "Lorem Ipsum Dolor",
+      "label4": "Lorem Ipsum Dolor",
+      "label5": "Lorem Ipsum Dolor",
+      "label6": "Lorem Ipsum Dolor",
+      "value1": "10/19/2017",
+      "value2": "Ut",
+      "value3": "Eros",
+      "value4": "Yes",
+      "value5": "Sit",
+      "value6": "Lorem Ipsum Dolor"
+    },
+    "cards": {
+      "title1": "Lorem P",
+      "title2": "Lorem S",
+      "title3": "Lorem T",
+      "server": "Server",
+      "content1": "Lorem ipsum dolor sit amet consectetur.",
+      "content2": "Lorem ipsum dolor sit amet consectetur.",
+      "content3": "Lorem ipsum dolor sit amet consectetur.",
+      "description1": "Lorem ipsum dolor sit amet consectetur. In laoreet elementum luctus odio. Id enim urna.",
+      "description2": "Lorem ipsum dolor sit amet consectetur. Quis viverra etiam pellentesque lectus semper in massa purus. Auctor aenean aenean senectus massa dignissim vehicula mi erat purus. Praesent scelerisque aliquet metus sagittis dictum sed sed. Sed venenatis sed urna quam.",
+      "description3": "Lorem ipsum dolor sit amet consectetur. Nunc vitae tortor convallis vitae arcu. Magna."
+    }
+  },
+  "risk_summary": {
+    "title": "Contextual Risk",
+    "levels": {
+      "critical": "Critical",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    }
+  },
+  "contextual_risk": {
+    "title": "Contextual Risk Assessment",
+    "table_headers": {
+      "asset": "Asset",
+      "contextual_risk": "Contextual Risk"
+    },
+    "pagination": {
+      "showing": "Showing",
+      "of": "of"
+    }
+  },
+  "asset_flow": {
+    "title": "Asset Flow Diagram",
+    "legend": {
+      "critical": "Critical Risk",
+      "warning": "Warning",
+      "low": "Low Risk"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "errors": {
+    "generic": "An unexpected error occurred",
+    "network": "Network connection error",
+    "not_found": "Resource not found",
+    "unauthorized": "Unauthorized access",
+    "validation": "Validation error"
+  }
+}

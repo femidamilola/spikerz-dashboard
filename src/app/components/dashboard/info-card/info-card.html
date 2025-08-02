@@ -4,7 +4,7 @@
   [class.expanded]="isExpanded()"
   (click)="toggleExpanded()"
 >
-  <div class="card-container">
+  <div class="card-container" [class.active]="isExpanded()">
     <h3 class="card-title">{{ content().title }}</h3>
 
     <div class="card-content">

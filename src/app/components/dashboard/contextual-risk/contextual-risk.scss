@@ -1,15 +1,25 @@
+@use "../../../constants/breakpoints" as *;
+
 .contextual-risk-container {
-  overflow: auto;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: visible;
   background: white;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 
   .risk-table {
     width: 100%;
     border-collapse: collapse;
+    // min-width: 600px; /* Minimum width for table readability */
+    flex: 1; /* Allow table to grow within container */
 
     thead {
       th {
@@ -99,13 +109,13 @@
       }
 
       &.high {
-        background: #fef7e0;
-        color: #f9ab00;
+        background: #fff3e0;
+        color: #f57c00;
       }
 
       &.medium {
-        background: #e8f0fe;
-        color: #1a73e8;
+        background: #fff8e1;
+        color: #ffb300;
       }
 
       &.low {
@@ -116,6 +126,8 @@
   }
 
   .pagination {
+    position: sticky;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,6 +159,128 @@
       font-size: 13px;
       color: #667085;
       user-select: none;
+    }
+  }
+}
+
+/* Mobile optimizations for table */
+@media screen and (max-width: $breakpoint-sm) {
+  .contextual-risk-container {
+    overflow-x: auto;
+    min-height: 300px; /* Smaller minimum height on mobile */
+    max-height: none; /* Remove max height on mobile */
+
+    .risk-table {
+      font-size: 12px;
+      min-width: 480px; /* Smaller minimum width for mobile */
+
+      thead th {
+        padding: 8px 12px;
+        font-size: 12px;
+
+        &.header-risk {
+          text-wrap: wrap;
+        }
+      }
+
+      tbody .asset-item td {
+        padding: 12px 8px;
+      }
+    }
+
+    .asset-content {
+      gap: 12px;
+
+      .asset-icon {
+        width: 32px;
+        height: 32px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .asset-details {
+        .asset-name {
+          font-size: 12px;
+        }
+
+        .asset-ip {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .risk-badge .risk-level {
+      padding: 4px 12px;
+      font-size: 12px;
+    }
+
+    .pagination {
+      gap: 12px;
+      padding: 8px;
+
+      .pagination-text {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+  .contextual-risk-container {
+    .risk-table {
+      font-size: 11px;
+      min-width: 420px; /* Even smaller for very small screens */
+
+      thead th {
+        padding: 6px 8px;
+        font-size: 10px;
+      }
+
+      tbody .asset-item td {
+        padding: 8px 6px;
+      }
+    }
+
+    .asset-content {
+      gap: 8px;
+
+      .asset-icon {
+        width: 28px;
+        height: 28px;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .asset-details {
+        .asset-name {
+          font-size: 11px;
+          margin-bottom: 2px;
+        }
+
+        .asset-ip {
+          font-size: 9px;
+        }
+      }
+    }
+
+    .risk-badge .risk-level {
+      padding: 3px 8px;
+      font-size: 10px;
+    }
+
+    .pagination {
+      gap: 8px;
+      padding: 6px;
+
+      .pagination-text {
+        font-size: 10px;
+      }
     }
   }
 }

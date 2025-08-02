@@ -1,5 +1,9 @@
+@use "../../../constants/breakpoints" as *;
+
 .diagram-wrapper {
+  position: relative;
   width: 100%;
+  min-height: 300px;
   overflow-x: auto;
   overflow-y: hidden;
   background: #fafafa;
@@ -9,13 +13,12 @@
 
   .diagram {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
     align-items: center;
-    gap: 0;
-    min-width: fit-content;
-    width: 100%;
+    justify-content: center; // Change from space-between to flex-start
+    width: max-content; // Allow diagram to size itself based on content
     padding: 0 0 24px 0;
+    min-height: 150px; // Accommodate double arrows
+    min-width: 100%; // Ensure it takes full width when possible
 
     .node-group {
       display: flex;
@@ -23,35 +26,43 @@
       align-items: center;
       gap: 1.5rem;
       flex-shrink: 0;
-      min-width: 120px;
+      z-index: 2; // Ensure nodes are above arrows
     }
 
     .arrow-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 60px;
-      transition: all 0.3s ease-in-out;
+      flex-shrink: 0; // Don't shrink, use explicit width
+      min-width: 60px;
+      z-index: 1;
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
 
       &.single-arrow {
-        min-width: 40px;
-        max-width: 80px;
+        height: 60px;
+
+        svg {
+          height: 6px;
+        }
       }
 
       &.double-arrow {
-        min-width: 80px;
-        max-width: 120px;
-      }
+        height: 120px; // Accommodate the original 110px height
 
-      .arrow {
-        width: 100%;
-        height: 24px;
-        object-fit: contain;
+        svg {
+          height: 110px;
+        }
       }
     }
   }
 
   .diagram-legend {
+    position: sticky;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -100,6 +111,111 @@
         app-custom-icon {
           background-color: #02983e;
           color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: $breakpoint-md) {
+  .diagram-wrapper {
+    padding: 16px 12px 0 12px;
+    border-radius: 12px;
+    min-height: 0;
+
+    .diagram {
+      padding: 0 0 16px 0;
+      min-height: 120px;
+
+      .node-group {
+        gap: 1rem;
+      }
+
+      .arrow-container {
+        min-width: 40px;
+
+        &.single-arrow {
+          height: 40px;
+
+          svg {
+            height: 4px;
+          }
+        }
+
+        &.double-arrow {
+          height: 80px;
+
+          svg {
+            height: 70px;
+          }
+        }
+      }
+    }
+
+    .diagram-legend {
+      gap: 20px;
+      padding: 12px;
+      flex-wrap: wrap;
+
+      .legend-item {
+        font-size: 14px;
+        gap: 6px;
+
+        app-custom-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .diagram-wrapper {
+    padding: 12px 8px 0 8px;
+    border-radius: 8px;
+
+    .diagram {
+      padding: 0 0 12px 0;
+      min-height: 100px;
+
+      .node-group {
+        gap: 0.75rem;
+      }
+
+      .arrow-container {
+        min-width: 30px;
+
+        &.single-arrow {
+          height: 30px;
+
+          svg {
+            height: 3px;
+          }
+        }
+
+        &.double-arrow {
+          height: 60px;
+
+          svg {
+            height: 50px;
+          }
+        }
+      }
+    }
+
+    .diagram-legend {
+      gap: 12px;
+      padding: 8px;
+
+      .legend-item {
+        font-size: 12px;
+        gap: 4px;
+
+        app-custom-icon {
+          width: 16px;
+          height: 16px;
         }
       }
     }

@@ -1,7 +1,12 @@
-<div class="node-container">
+<div
+  #nodeContainer
+  class="node-container"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
   <div class="node-circle" [class]="color()">
     <div class="icon">
-      <app-custom-icon [label]="icon()" size="24px" />
+      <app-custom-icon [label]="icon()" size="inherit" />
     </div>
     @if (badge()) {
     <app-badge [color]="badge()!.color" [icon]="badge()!.icon"></app-badge>
@@ -13,4 +18,14 @@
     <div class="ip">{{ ip() }}</div>
     }
   </div>
+
+  <!-- Popover -->
+  @if (popoverData()) {
+  <app-popover
+    [data]="popoverData()!"
+    [referenceElement]="referenceElement"
+    [isVisible]="isPopoverVisible"
+    (onClose)="onPopoverClose()"
+  />
+  }
 </div>

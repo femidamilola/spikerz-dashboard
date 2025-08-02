@@ -1,4 +1,4 @@
-<div class="diagram-wrapper">
+<div #diagramWrapper class="diagram-wrapper">
   <div class="diagram">
     @for (group of nodeGroups; track $index) {
     <div class="node-group">
@@ -9,6 +9,7 @@
         [icon]="node.icon"
         [badge]="node.badge"
         [ip]="node.ip"
+        [popoverData]="node.popoverData"
       ></app-node>
       }
     </div>
@@ -19,6 +20,7 @@
           ? 'double-arrow'
           : 'single-arrow'
       }}"
+      [style.width.px]="getDynamicArrowWidth($index + 1)"
       [innerHTML]="getArrowType($index + 1)"
     ></div>
     } }

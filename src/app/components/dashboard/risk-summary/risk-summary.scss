@@ -1,3 +1,5 @@
+@use "../../../constants/breakpoints" as *;
+
 .risk-summary-header {
   color: #667085;
   font-size: 18px;
@@ -10,6 +12,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  // min-height: 200px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .risk-summary-list {
@@ -42,7 +48,7 @@
   background: #c62828;
 }
 .risk-summary-list .high {
-  background: #ff7043;
+  background: #f57c00;
 }
 .risk-summary-list .medium {
   background: #ffb300;
@@ -61,25 +67,114 @@
   margin-left: 2px;
 }
 
-.risk-summary-circle {
+.donut-chart-container {
   position: relative;
   width: 120px;
   height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donut-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* Dynamic background will be set via Angular binding */
+}
+
+.donut-hole {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.risk-summary-circle svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .risk-summary-total {
-  position: relative;
-  font-size: 35px;
+  font-size: 24px;
   font-weight: 600;
   color: #656575;
-  z-index: 1;
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: $breakpoint-sm) {
+  .risk-summary-header {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .risk-summary-content {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .risk-summary-list {
+    gap: 16px;
+    order: 2;
+    width: 100%;
+
+    li {
+      font-size: 16px;
+    }
+  }
+
+  .donut-chart-container {
+    width: 100px;
+    height: 100px;
+    order: 1;
+  }
+
+  .donut-hole {
+    width: 60px;
+    height: 60px;
+  }
+
+  .risk-summary-total {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+  .risk-summary-header {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .risk-summary-content {
+    gap: 16px;
+  }
+
+  .risk-summary-list {
+    gap: 12px;
+
+    li {
+      font-size: 14px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+    }
+  }
+
+  .donut-chart-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .donut-hole {
+    width: 50px;
+    height: 50px;
+  }
+
+  .risk-summary-total {
+    font-size: 18px;
+  }
 }

@@ -65,17 +65,17 @@ export const ICON_REGISTRY: Record<string, string> = {
 </svg>
 `,
 
-  mask: `<svg width="24" height="15" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  mask: `<svg viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.16675 6.45988C1.16675 7.89647 1.73743 9.27422 2.75325 10.29C3.76908 11.3059 5.14683 11.8765 6.58342 11.8765C8.5851 11.9511 10.4992 12.7167 12.0001 14.0432C13.501 12.7167 15.4151 11.9511 17.4167 11.8765C18.8533 11.8765 20.2311 11.3059 21.2469 10.29C22.2627 9.27422 22.8334 7.89647 22.8334 6.45988V1.04321H17.4167C15.4151 1.11777 13.501 1.8834 12.0001 3.20988C10.4992 1.8834 8.5851 1.11777 6.58342 1.04321H1.16675V6.45988Z" stroke="currentColor" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M5.50008 5.37655C7.12508 5.37655 8.75008 5.91821 8.75008 7.54321C6.58342 7.54321 5.50008 7.54321 5.50008 5.37655Z" stroke="currentColor" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M18.5001 5.37655C16.8751 5.37655 15.2501 5.91821 15.2501 7.54321C17.4167 7.54321 18.5001 7.54321 18.5001 5.37655Z" stroke="currentColor" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `,
-  server: `<svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+  server: `<svg viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.06152 5.42985H6.07246M6.06152 16.2936H6.07246M3.87402 1.80859H21.374C22.5821 1.80859 23.5615 2.61924 23.5615 3.61922V7.24047C23.5615 8.24045 22.5821 9.0511 21.374 9.0511H3.87402C2.6659 9.0511 1.68652 8.24045 1.68652 7.24047V3.61922C1.68652 2.61924 2.6659 1.80859 3.87402 1.80859ZM3.87402 12.6724H21.374C22.5821 12.6724 23.5615 13.483 23.5615 14.483V18.1042C23.5615 19.1042 22.5821 19.9149 21.374 19.9149H3.87402C2.6659 19.9149 1.68652 19.1042 1.68652 18.1042V14.483C1.68652 13.483 2.6659 12.6724 3.87402 12.6724Z" stroke="#1873DE" stroke-width="1.81062" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `,
-  users: `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  users: `<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="mask0_1_475" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
 <rect x="0.0400391" y="0.910034" width="13" height="13" fill="#D9D9D9"/>
 </mask>
@@ -84,7 +84,7 @@ export const ICON_REGISTRY: Record<string, string> = {
 </g>
 </svg>
 `,
-  shield_x: `<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  shield_x: `<svg viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.2358 6.82251L6.76354 10.5841M6.76354 6.82251L10.2358 10.5841M14.0552 9.45561C14.0552 13.2172 11.6246 15.098 8.73576 16.1888C8.58448 16.2444 8.42016 16.2417 8.27048 16.1813C5.37465 15.098 2.94409 13.2172 2.94409 9.45561V4.18941C2.94409 3.98988 3.01726 3.79853 3.14749 3.65744C3.27772 3.51635 3.45436 3.43709 3.63854 3.43709C5.02742 3.43709 6.76353 2.53431 7.97187 1.3908C8.11899 1.25463 8.30614 1.17981 8.49965 1.17981C8.69315 1.17981 8.8803 1.25463 9.02742 1.3908C10.2427 2.54184 11.9719 3.43709 13.3608 3.43709C13.5449 3.43709 13.7216 3.51635 13.8518 3.65744C13.982 3.79853 14.0552 3.98988 14.0552 4.18941V9.45561Z" stroke="currentColor" stroke-width="1.46" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `,
@@ -102,6 +102,17 @@ export const ICON_REGISTRY: Record<string, string> = {
     stroke-linecap="round"
     stroke-linejoin="round"
   />
+</svg>
+`,
+  info: `<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_1004)">
+<path d="M8.75 5.19H5M10 7.69H5M8.125 10.19H5M2.5 1.44V13.94L3.75 13.315L5 13.94L6.25 13.315L7.5 13.94L8.75 13.315L10 13.94L11.25 13.315L12.5 13.94V1.44L11.25 2.065L10 1.44L8.75 2.065L7.5 1.44L6.25 2.065L5 1.44L3.75 2.065L2.5 1.44Z" stroke="#858D9D" stroke-width="0.9375" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_1_1004">
+<rect width="15" height="15" fill="white" transform="translate(0 0.189999)"/>
+</clipPath>
+</defs>
 </svg>
 `,
 };

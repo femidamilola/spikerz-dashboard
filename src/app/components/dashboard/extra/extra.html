@@ -1,5 +1,5 @@
 <div class="extra">
-  <h2>Extra</h2>
+  <h2>{{ i18nService.extra.title }}</h2>
   <p>{{ content() }}</p>
 
   <section class="info-table">
@@ -21,7 +21,7 @@
   </section>
 
   <!-- Cards Section -->
-  <h3>Lorem Ipsum Dolor Sit</h3>
+  <h3>{{ i18nService.extra.subtitle }}</h3>
   <section class="cards-section">
     @for (card of cards; track $index) {
     <app-info-card [content]="card" />
