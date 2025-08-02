@@ -17,12 +17,22 @@ import { Badge } from '../../dashboard/asset-diagram/components/badge/badge';
 
 export type PopoverType = 'vulnerability' | 'normal';
 
+export interface PopoverText {
+  color?: string;
+  value: string | null; // null represents a forced break
+}
+
+export interface PopoverInfo {
+  label: string;
+  text: PopoverText[];
+}
+
 export interface PopoverData {
   title: string;
   content: string;
   type: PopoverType;
   vulnerabilityLevel?: 'critical' | 'high' | 'medium' | 'low';
-  additionalInfo?: { label: string; value: string; isHtml?: boolean }[];
+  additionalInfo?: PopoverInfo;
   badge?: IBadge;
 }
 

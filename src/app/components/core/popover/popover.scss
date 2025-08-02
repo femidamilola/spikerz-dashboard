@@ -1,3 +1,5 @@
+@use "../../../constants/colors" as *;
+
 .popover {
   position: absolute;
   z-index: 1000;
@@ -145,49 +147,56 @@
 
   .content-row {
     display: flex;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 12px;
     line-height: 1.5;
+    color: var(--color-text-primary);
 
     &:last-child {
       margin-bottom: 0;
     }
 
     .row-icon {
-      color: #64748b;
+      color: var(--color-info-card-divider);
       margin-top: 2px;
       flex-shrink: 0;
     }
 
     .row-content {
-      flex: 1;
+      display: flex;
       font-size: 14px;
-      color: #475569;
+      font-weight: 700;
 
-      // Color classes for inline styling
-      :global(.text-blue) {
-        color: #3b82f6;
-        font-weight: 500;
-      }
+      &.text {
+        padding: 2px 4px;
+        font-weight: 600;
+        border-radius: 6px;
 
-      :global(.text-orange) {
-        color: #f59e0b;
-        font-weight: 500;
-      }
+        &.text-blue {
+          background-color: $color-blue-50;
+          color: $color-blue-700;
+        }
 
-      :global(.text-green) {
-        color: #10b981;
-        font-weight: 500;
-      }
+        &.text-yellow {
+          background-color: $color-yellow-50;
+          color: $color-yellow-600;
+        }
 
-      :global(.text-purple) {
-        color: #8b5cf6;
-        font-weight: 500;
-      }
+        &.text-green {
+          color: var(--color-success, #10b981);
+        }
 
-      :global(.text-gray) {
-        color: #6b7280;
+        &.text-purple {
+          background-color: $color-purple-50;
+          color: $color-purple-600;
+        }
+
+        &.text-gray {
+          color: var(--color-text-muted, #6b7280);
+        }
       }
     }
   }

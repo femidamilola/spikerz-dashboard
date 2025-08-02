@@ -199,6 +199,7 @@ export const MOCK_INFO_LIST_STRUCTURE = [
   },
   { labelKey: 'extra.info.label5', valueKey: 'extra.info.value5' },
   { labelKey: 'extra.info.label6', valueKey: 'extra.info.value6' },
+  { labelKey: 'extra.info.label6', valueKey: 'extra.info.value6' },
 ];
 
 // Mock Cards Structure (structure only, text comes from i18n)

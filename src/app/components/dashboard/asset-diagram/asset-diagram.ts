@@ -83,14 +83,17 @@ export class AssetDiagram implements AfterViewInit {
             content: 'Lorem: 1.2.3.4',
             type: 'vulnerability',
             vulnerabilityLevel: 'critical',
-            additionalInfo: [
-              { label: 'IP1', value: '1.2.3.4' },
-              { label: 'IP2', value: '1.2.3.4' },
-              { label: 'IP3', value: '1.2.3.4' },
-              { label: 'IP4', value: '1.2.3.4' },
-              { label: 'IP5', value: '1.2.3.4' },
-              { label: 'IP6', value: '1.2.3.4' },
-            ],
+            additionalInfo: {
+              label: 'IP Addresses',
+              text: [
+                { value: '1.2.3.4' },
+                { value: '1.2.3.4' },
+                { value: '1.2.3.4' },
+                { value: '1.2.3.4' },
+                { value: '1.2.3.4' },
+                { value: '1.2.3.4' },
+              ],
+            },
           },
         },
       ],
@@ -106,20 +109,39 @@ export class AssetDiagram implements AfterViewInit {
             title: 'Loremipsu',
             content: '',
             type: 'normal',
-            additionalInfo: [
-              {
-                label: 'row1',
-                value:
-                  'Lorem: Loremipsum Loremipsum <span class="text-blue">1.2.3.4</span>',
-                isHtml: true,
-              },
-              {
-                label: 'row2',
-                value:
-                  '<span class="text-blue">1.2.3.4</span> Loremipsum <span class="text-blue">1.2.3.4 1.2.3.4</span>',
-                isHtml: true,
-              },
-            ],
+            additionalInfo: {
+              label: 'Lorem',
+              text: [
+                {
+                  color: '',
+                  value: 'Loremipsum',
+                },
+                {
+                  color: '',
+                  value: 'Loremipsum',
+                },
+                {
+                  color: 'purple',
+                  value: '1.2.3.4',
+                },
+                {
+                  color: 'purple',
+                  value: '1.2.3.4',
+                },
+                {
+                  color: '',
+                  value: 'Loremipsum',
+                },
+                {
+                  color: 'purple',
+                  value: '1.2.3.4',
+                },
+                {
+                  color: 'purple',
+                  value: '1.2.3.4',
+                },
+              ],
+            },
           },
         },
       ],
@@ -135,32 +157,39 @@ export class AssetDiagram implements AfterViewInit {
             title: 'Loremipsum',
             content: '',
             type: 'normal',
-            additionalInfo: [
-              {
-                label: 'row1',
-                value:
-                  'Lorem: <span class="text-orange">Lorem "Ipsum"</span> <span class="text-green">Lorem</span> Loremipsum Loremipsum',
-                isHtml: true,
-              },
-              {
-                label: 'row2',
-                value:
-                  '<span class="text-blue">1.2.3.4</span> Loremipsum <span class="text-blue">1.2.3.4 1.2.3.4</span> <span class="text-blue">Lorem 1234,5678</span>',
-                isHtml: true,
-              },
-              {
-                label: 'row3',
-                value:
-                  'Lorem: <span class="text-orange">Lorem "Ipsum"</span> Loremipsum Loremipsum',
-                isHtml: true,
-              },
-              {
-                label: 'row4',
-                value:
-                  '<span class="text-blue">1.2.3.4 1.2.3.4</span> Loremipsum Loremipsum <span class="text-blue">1.2.3.4 1.2.3.4</span>',
-                isHtml: true,
-              },
-            ],
+            additionalInfo: {
+              label: 'Lorem',
+              text: [
+                {
+                  color: '',
+                  value: 'Loremipsum',
+                },
+                {
+                  color: '',
+                  value: 'Loremipsum',
+                },
+                {
+                  color: 'purple',
+                  value: '1.2.3.4',
+                },
+                {
+                  color: 'purple',
+                  value: '1.2.3.4',
+                },
+                {
+                  color: '',
+                  value: 'Loremipsum',
+                },
+                {
+                  color: 'purple',
+                  value: '1.2.3.4',
+                },
+                {
+                  color: 'purple',
+                  value: '1.2.3.4',
+                },
+              ],
+            },
           },
         },
       ],
@@ -179,19 +208,23 @@ export class AssetDiagram implements AfterViewInit {
             content: '192.168.1.1',
             type: 'normal',
             badge: { color: 'red', icon: 'shield_x' },
-            additionalInfo: [
-              {
-                label: 'row1',
-                value: 'Lorem: <span class="text-orange">Lorem "Ipsum"</span>',
-                isHtml: true,
-              },
-              {
-                label: 'row2',
-                value:
-                  'Loremipsum <span class="text-blue">Lorem 1234,5678</span>',
-                isHtml: true,
-              },
-            ],
+            additionalInfo: {
+              label: 'Lorem',
+              text: [
+                {
+                  color: 'yellow',
+                  value: 'Lorem "ipsum"',
+                },
+                {
+                  color: '',
+                  value: 'Loremipsum',
+                },
+                {
+                  color: 'blue',
+                  value: 'Lorem 1234,5678',
+                },
+              ],
+            },
           },
         },
         {
@@ -206,19 +239,23 @@ export class AssetDiagram implements AfterViewInit {
             content: '192.168.1.2',
             type: 'normal',
             badge: { color: 'red', icon: 'shield_x' },
-            additionalInfo: [
-              {
-                label: 'row1',
-                value: 'Lorem: <span class="text-orange">Lorem "Ipsum"</span>',
-                isHtml: true,
-              },
-              {
-                label: 'row2',
-                value:
-                  'Loremipsum <span class="text-blue">Lorem 1234,5678</span>',
-                isHtml: true,
-              },
-            ],
+            additionalInfo: {
+              label: 'Lorem',
+              text: [
+                {
+                  color: 'yellow',
+                  value: 'Lorem "ipsum"',
+                },
+                {
+                  color: '',
+                  value: 'Loremipsum',
+                },
+                {
+                  color: 'blue',
+                  value: 'Lorem 1234,5678',
+                },
+              ],
+            },
           },
         },
       ],

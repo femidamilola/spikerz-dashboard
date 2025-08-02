@@ -16,8 +16,8 @@
 
       <!-- Vulnerability Data Grid -->
       <div class="vulnerability-data-grid">
-        @if (data().additionalInfo && data().additionalInfo!.length > 0) { @for
-        (info of data().additionalInfo; track info.label) {
+        @if (data().additionalInfo && data().additionalInfo!.text.length > 0) {
+        @for (info of data().additionalInfo?.text; track info) {
         <div class="vulnerability-data-item">
           {{ info.value }}
         </div>
@@ -55,17 +55,21 @@
 
       <!-- Content Rows -->
       <div class="normal-content">
-        @if (data().additionalInfo && data().additionalInfo!.length > 0) {
-        <app-custom-icon label="info" size="16px" class="row-icon" />
-        @for (info of data().additionalInfo; track info.label) {
+        @if (data().additionalInfo && data().additionalInfo!.label) {
         <div class="content-row">
           <app-custom-icon label="file_text" size="16px" class="row-icon" />
+          {{ data().additionalInfo!.label }}: @for (info of
+          data().additionalInfo?.text; track $index) {
           <span
-            class="row-content"
-            [innerHTML]="getSafeHtml(info.value)"
-          ></span>
+            [class]="
+              ['row-content', info.color ? 'text text-' + info.color : ''].join(
+                ' '
+              )
+            "
+            >{{ info.value }}</span
+          >}
         </div>
-        } }
+        }
       </div>
     </div>
     }
