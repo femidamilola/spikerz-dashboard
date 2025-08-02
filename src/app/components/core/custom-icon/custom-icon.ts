@@ -1,5 +1,10 @@
-import { Component, input, OnInit } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import {
+  Component,
+  input,
+  AfterViewInit,
+  ElementRef,
+  viewChild,
+} from '@angular/core';
 import { ICON_REGISTRY } from './icon-registry';
 
 @Component({
@@ -8,7 +13,7 @@ import { ICON_REGISTRY } from './icon-registry';
   templateUrl: './custom-icon.html',
   styleUrl: './custom-icon.scss',
 })
-export class CustomIcon implements OnInit {
+export class CustomIcon implements AfterViewInit {
   private readonly DEFAULT_ICON_SIZE = '20px';
   private readonly DEFAULT_FALLBACK_ICON = `
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -18,19 +23,32 @@ export class CustomIcon implements OnInit {
 
   size = input<string>(this.DEFAULT_ICON_SIZE);
   label = input.required<string>();
-  svgContent: SafeHtml | null = null;
 
-  constructor(private sanitizer: DomSanitizer) {}
+  iconContainer = viewChild<ElementRef<HTMLDivElement>>('iconContainer');
 
-  async ngOnInit() {
+  constructor() {}
+
+  async ngAfterViewInit() {
     const rawSvg = ICON_REGISTRY[this.label()];
     if (!rawSvg) {
-      this.svgContent = this.sanitizer.bypassSecurityTrustHtml(
-        this.DEFAULT_FALLBACK_ICON
-      );
+      // this.svgContent = this.sanitizer.bypassSecurityTrustHtml(
+      //   this.DEFAULT_FALLBACK_ICON
+      // );
+      this.renderIcon(this.DEFAULT_FALLBACK_ICON);
       return;
     }
 
-    this.svgContent = this.sanitizer.bypassSecurityTrustHtml(rawSvg);
+    // this.svgContent = this.sanitizer.bypassSecurityTrustHtml(rawSvg);
+    this.renderIcon(rawSvg);
+  }
+
+  async renderIcon(rawSvg: string) {
+    this.iconContainer()!.nativeElement.innerHTML = '';
+    const div = this.iconContainer()!.nativeElement;
+    div.innerHTML = rawSvg.trim();
+    const svg = div.querySelector('svg');
+    if (svg) {
+      svg.classList.add('custom-icon-svg'); // Ensure class is applied
+    }
   }
 }

@@ -81,7 +81,6 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  /* Dynamic background will be set via Angular binding */
 }
 
 .donut-hole {
@@ -115,6 +114,8 @@
   }
 
   .risk-summary-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     order: 2;
     width: 100%;
