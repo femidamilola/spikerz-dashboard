@@ -1,6 +1,6 @@
 <aside [class.collapsed]="collapsed()" class="sidebar">
   <button class="collapse-btn" (click)="toggleCollapse()" type="button">
-    <app-custom-icon label="chevron_left" />
+    <app-custom-icon [size]="collapseButtonSize" label="chevron_left" />
   </button>
   <nav class="main-nav">
     <ul>

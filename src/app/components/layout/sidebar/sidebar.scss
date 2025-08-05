@@ -49,6 +49,10 @@
     border: none;
     cursor: pointer;
     box-shadow: 0 2px 4px var(--shadow-light);
+
+    app-custom-icon {
+      transition: transform 0.3s ease;
+    }
   }
 
   .main-nav {

@@ -16,6 +16,7 @@ import {
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
+  readonly collapseButtonSize = '11px';
   userName = input<string>('User Name');
 
   collapsed = signal<boolean>(false);
