@@ -33,7 +33,6 @@ export class Sidebar {
   }
 
   get menuItems(): NavItem[] {
-    const nav = this.i18nService.nav;
     return NAV_MENU_ITEMS.map((item) => ({
       ...item,
       label: this.i18nService.getText(item.key || ''),
