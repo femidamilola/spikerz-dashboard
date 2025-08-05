@@ -113,20 +113,16 @@ export interface I18nTexts {
 export class I18nService {
   private readonly http = inject(HttpClient);
 
-  // Current language signal (Angular 20+ reactive approach)
   readonly currentLanguage = signal<SupportedLanguage>(
     APP_CONFIG.DEFAULT_LANGUAGE
   );
 
-  // Texts behavior subject for reactive updates
   private readonly textsSubject = new BehaviorSubject<I18nTexts | null>(null);
   public readonly texts$ = this.textsSubject.asObservable();
 
-  // Current texts signal
   readonly texts = signal<I18nTexts | null>(null);
 
   constructor() {
-    // Load default language on service initialization
     this.loadLanguage(this.currentLanguage()).subscribe();
   }
 
@@ -180,9 +176,6 @@ export class I18nService {
     return typeof value === 'string' ? value : keyPath;
   }
 
-  /**
-   * Convenience getters for different sections
-   */
   get nav() {
     return this.texts()?.nav || this.getFallbackTranslations().nav;
   }
@@ -228,9 +221,6 @@ export class I18nService {
     return this.texts()?.errors || this.getFallbackTranslations().errors;
   }
 
-  /**
-   * Fallback translations (embedded English)
-   */
   private getFallbackTranslations(): I18nTexts {
     return {
       nav: {

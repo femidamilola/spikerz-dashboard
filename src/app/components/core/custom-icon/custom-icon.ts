@@ -31,14 +31,10 @@ export class CustomIcon implements AfterViewInit {
   async ngAfterViewInit() {
     const rawSvg = ICON_REGISTRY[this.label()];
     if (!rawSvg) {
-      // this.svgContent = this.sanitizer.bypassSecurityTrustHtml(
-      //   this.DEFAULT_FALLBACK_ICON
-      // );
       this.renderIcon(this.DEFAULT_FALLBACK_ICON);
       return;
     }
 
-    // this.svgContent = this.sanitizer.bypassSecurityTrustHtml(rawSvg);
     this.renderIcon(rawSvg);
   }
 
@@ -48,7 +44,7 @@ export class CustomIcon implements AfterViewInit {
     div.innerHTML = rawSvg.trim();
     const svg = div.querySelector('svg');
     if (svg) {
-      svg.classList.add('custom-icon-svg'); // Ensure class is applied
+      svg.classList.add('custom-icon-svg');
     }
   }
 }

@@ -14,11 +14,11 @@
   .diagram {
     display: flex;
     align-items: center;
-    justify-content: center; // Change from space-between to flex-start
-    width: max-content; // Allow diagram to size itself based on content
+    justify-content: center;
+    width: max-content;
     padding: 0 0 24px 0;
-    min-height: 150px; // Accommodate double arrows
-    min-width: 100%; // Ensure it takes full width when possible
+    min-height: 150px;
+    min-width: 100%;
 
     .node-group {
       display: flex;
@@ -26,14 +26,14 @@
       align-items: center;
       gap: 1.5rem;
       flex-shrink: 0;
-      z-index: 2; // Ensure nodes are above arrows
+      z-index: 2;
     }
 
     .arrow-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0; // Don't shrink, use explicit width
+      flex-shrink: 0;
       min-width: 60px;
       z-index: 1;
 
@@ -51,7 +51,7 @@
       }
 
       &.double-arrow {
-        height: 120px; // Accommodate the original 110px height
+        height: 120px;
 
         svg {
           height: 110px;
@@ -117,7 +117,6 @@
   }
 }
 
-/* Mobile optimizations */
 @media screen and (max-width: $breakpoint-md) {
   .diagram-wrapper {
     padding: 16px 12px 0 12px;

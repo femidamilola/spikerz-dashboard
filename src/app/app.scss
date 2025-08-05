@@ -3,18 +3,17 @@
   height: 100vh;
   background-color: var(--color-background-secondary);
   width: 100vw;
-  overflow: hidden; /* Prevent window scrolling */
+  overflow: hidden;
 }
 
 .content-area {
   flex: 1;
   padding: 1.5rem;
-  // overflow-y: auto; /* Allow content area to scroll */
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  min-width: 0; /* Important for flexbox overflow handling */
-  height: calc(100vh - 3rem); /* Set explicit height */
+  min-width: 0;
+  height: calc(100vh - 3rem);
 }
 
 @media screen and (max-width: 1280px) {
@@ -24,7 +23,6 @@
   }
 }
 
-/* Mobile optimizations */
 @media screen and (max-width: 768px) {
   .app-container {
     flex-direction: column;
@@ -33,19 +31,19 @@
   }
 
   .content-area {
-    padding: 0 1rem 1rem 1rem; /* Remove top padding, let dashboard handle it */
+    padding: 0 1rem 1rem 1rem;
     overflow-y: auto;
     overflow-x: hidden;
     flex: 1;
     width: 100%;
     box-sizing: border-box;
-    height: calc(100vh - 60px); /* Account for mobile sidebar height */
+    height: calc(100vh - 60px);
   }
 }
 
 @media screen and (max-width: 480px) {
   .content-area {
     padding: 0 0.75rem 0.75rem 0.75rem;
-    height: calc(100vh - 50px); /* Account for smaller mobile sidebar */
+    height: calc(100vh - 50px);
   }
 }

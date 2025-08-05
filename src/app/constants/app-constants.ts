@@ -1,15 +1,8 @@
-// ============================================
-// APPLICATION CONSTANTS AND TYPES
-// ============================================
-// This file contains structural constants, types, interfaces,
-// and non-text configurations that don't need internationalization
-
-// Navigation Structure
 export interface NavItem {
   label: string;
   icon: string;
   routerLink: string;
-  key?: string; // i18n key
+  key?: string;
 }
 
 export interface Asset {
@@ -19,7 +12,6 @@ export interface Asset {
   vulnerabilities: string[];
 }
 
-// Risk Levels Configuration
 export const RISK_LEVELS = {
   CRITICAL: 'critical',
   HIGH: 'high',
@@ -29,13 +21,11 @@ export const RISK_LEVELS = {
 
 export type RiskLevel = (typeof RISK_LEVELS)[keyof typeof RISK_LEVELS];
 
-// Pagination Configuration
 export const PAGINATION_CONFIG = {
   DEFAULT_PAGE_SIZE: 5,
   AVAILABLE_PAGE_SIZES: [5, 10, 15, 20],
 } as const;
 
-// Navigation Menu Structure (with i18n keys)
 export const NAV_MENU_ITEMS: NavItem[] = [
   {
     label: '',
@@ -76,7 +66,6 @@ export const NAV_SETTINGS_ITEMS: NavItem[] = [
   },
 ];
 
-// Asset List for Testing (keeping dummy data structure)
 export const MOCK_ASSETS: Asset[] = [
   {
     name: 'Loremipsumdolorsit',
@@ -170,7 +159,6 @@ export const MOCK_ASSETS: Asset[] = [
   },
 ];
 
-// Info Card Interface
 export interface IInfoCard {
   title: string;
   title2: string;
@@ -180,14 +168,12 @@ export interface IInfoCard {
   description: string;
 }
 
-// Information List Item Interface
 export interface InfoListItem {
   label: string;
   value: string;
   icon?: string;
 }
 
-// Mock Information List (structure only, text comes from i18n)
 export const MOCK_INFO_LIST_STRUCTURE = [
   { labelKey: 'extra.info.label1', valueKey: 'extra.info.value1' },
   { labelKey: 'extra.info.label2', valueKey: 'extra.info.value2' },
@@ -202,7 +188,6 @@ export const MOCK_INFO_LIST_STRUCTURE = [
   { labelKey: 'extra.info.label6', valueKey: 'extra.info.value6' },
 ];
 
-// Mock Cards Structure (structure only, text comes from i18n)
 export const MOCK_CARDS_STRUCTURE = [
   {
     titleKey: 'extra.cards.title1',
@@ -230,7 +215,6 @@ export const MOCK_CARDS_STRUCTURE = [
   },
 ];
 
-// Risk Summary Mock Data
 export const MOCK_RISK_SUMMARY = {
   critical: 2,
   high: 0,
@@ -238,7 +222,6 @@ export const MOCK_RISK_SUMMARY = {
   low: 0,
 };
 
-// Application Configuration
 export const APP_CONFIG = {
   VERSION: '1.0.0',
   DEFAULT_LANGUAGE: 'en',

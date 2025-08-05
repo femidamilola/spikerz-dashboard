@@ -1,35 +1,29 @@
 @use "./app/constants/breakpoints" as *;
 
 :root {
-  /* Primary Colors */
   --color-primary: #00732e;
   --color-primary-light: #02983e;
   --color-primary-lightest: #e9faf0;
 
-  /* Text Colors */
   --color-text-primary: #525d73;
   --color-text-secondary: #334155;
   --color-text-gray-soft: #404a60;
   --color-text-muted: #a3a9b6;
 
-  /* Background Colors */
   --color-background-primary: #ffffff;
   --color-background-secondary: #fafafa;
   --color-background-muted: #f0f0f0;
 
-  /* Border Colors */
   --color-border-light: #eee;
   --color-border-medium: #e4e7ec;
   --color-border-medium-dark: #e0e2e7;
   --color-border-dark: #e0e0e0;
 
-  /* Status Colors */
   --color-error: #dc2626;
   --color-warning: #f59e0b;
   --color-success: #10b981;
   --color-info: #3b82f6;
 
-  /* Neutral Colors */
   --color-neutral-100: #f8fafc;
   --color-neutral-200: #e2e8f0;
   --color-neutral-300: #cbd5e1;
@@ -40,25 +34,20 @@
   --color-neutral-800: #1e293b;
   --color-neutral-900: #0f172a;
 
-  /* Red Colors */
   --color-red-50: #fff1f0;
   --color-red-700: #e5372b;
 
-  /* Purple Colors */
   --color-purple-50: #f2edff;
   --color-purple-600: #6236cc;
 
-  /* Yellow Colors */
   --color-yellow-50: #fff9ed;
   --color-yellow-600: #eba622;
 
-  /* Component Specific Colors */
   --color-arrow: #7c8698;
   --color-sidebar-active: #00732e;
   --color-sidebar-hover: #f0f0f0;
   --color-info-card-divider: #858d9d;
 
-  /* Shadow Colors */
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-medium: rgba(0, 0, 0, 0.15);
   --shadow-dark: rgba(0, 0, 0, 0.25);
@@ -85,14 +74,12 @@ body {
   overflow: hidden;
 }
 
-/* Mobile responsive utilities */
 @media screen and (max-width: $breakpoint-sm) {
   body {
     overflow: auto;
   }
 }
 
-/* Responsive text sizing */
 @media screen and (max-width: $breakpoint-xs) {
   html {
     font-size: 14px;

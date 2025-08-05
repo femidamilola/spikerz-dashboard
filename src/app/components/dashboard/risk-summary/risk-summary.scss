@@ -12,7 +12,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  // min-height: 200px;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
@@ -100,7 +99,6 @@
   color: #656575;
 }
 
-/* Mobile optimizations */
 @media screen and (max-width: $breakpoint-sm) {
   .risk-summary-header {
     font-size: 16px;

@@ -3,7 +3,7 @@ import { I18nService } from '../services/i18n.service';
 
 @Pipe({
   name: 'translate',
-  pure: false, // Make it impure to detect language changes
+  pure: false,
   standalone: true,
 })
 export class TranslatePipe implements PipeTransform {
@@ -12,7 +12,6 @@ export class TranslatePipe implements PipeTransform {
   transform(key: string, ...args: any[]): string {
     const text = this.i18nService.getText(key);
 
-    // Simple placeholder replacement if args are provided
     if (args.length > 0) {
       return this.replacePlaceholders(text, args);
     }

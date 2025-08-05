@@ -10,8 +10,8 @@
   padding: 0;
   min-height: 100%;
   max-width: 100%;
-  overflow: visible; /* Allow natural content flow */
-  align-items: start; /* Align items to start so panels can have different heights */
+  overflow: visible;
+  align-items: start;
 
   &.sidebar-collapsed {
     grid-template-columns: 432px calc(100vw - 432px - 80px - 4.5rem - 160px) 160px;
@@ -27,27 +27,27 @@
     background-color: #ffffff;
     box-shadow: 0px 1px 3px 0px #0000000d;
     box-shadow: 0px 1px 2px 0px #0000001a;
-    min-height: 0; /* Allow flex items to shrink */
+    min-height: 0;
   }
 
   .left-panel {
     max-height: calc(100vh - 3rem);
     overflow-y: auto;
     overflow-x: hidden;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    position: sticky; /* Make left panel stick */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: sticky;
     top: 0;
 
     &::-webkit-scrollbar {
-      display: none; /* WebKit */
+      display: none;
     }
   }
 
   .right-panel {
     height: fit-content;
     min-height: 0;
-    overflow: visible; /* Let content flow naturally */
+    overflow: visible;
     min-width: 0;
   }
 
@@ -69,21 +69,20 @@
   }
 }
 
-/* Tablet and smaller desktop breakpoint */
-@media screen and (max-width: $breakpoint-lg) {
+@media screen and (max-width: var(--breakpoint-lg)) {
   .dashboard {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     height: auto;
     min-height: calc(100vh - 3rem);
-    overflow: visible; /* Allow scrolling on smaller screens */
+    overflow: visible;
 
     &.sidebar-collapsed {
       grid-template-columns: 1fr;
     }
 
     .left-panel {
-      position: static; /* Remove sticky positioning on smaller screens */
+      position: static;
       max-height: none;
       overflow-y: visible;
       overflow-x: hidden;
@@ -101,18 +100,17 @@
   }
 }
 
-/* Mobile landscape and small tablet */
 @media screen and (max-width: $breakpoint-md) {
   .dashboard {
     padding: 3rem 0;
     gap: 1rem;
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-x: hidden;
 
     .left-panel,
     .right-panel {
       padding: 1rem;
       gap: 1rem;
-      min-width: 0; /* Prevent overflow */
+      min-width: 0;
     }
 
     .risk-section {
@@ -121,12 +119,11 @@
   }
 }
 
-/* Mobile portrait */
 @media screen and (max-width: $breakpoint-sm) {
   .dashboard {
     grid-template-columns: 1fr;
     gap: 0.75rem;
-    padding: 60px 0 0 0; /* Top padding for fixed mobile sidebar */
+    padding: 60px 0 0 0;
     height: auto;
     min-height: calc(100vh - 60px);
     overflow: visible;
@@ -138,7 +135,7 @@
     }
 
     .left-panel {
-      position: static; /* Remove sticky positioning on mobile */
+      position: static;
       max-height: none;
       overflow: visible;
     }
@@ -164,11 +161,10 @@
   }
 }
 
-/* Small mobile screens */
 @media screen and (max-width: $breakpoint-xs) {
   .dashboard {
     gap: 0.5rem;
-    padding: 50px 0 0 0; /* Adjusted for smaller mobile sidebar */
+    padding: 50px 0 0 0;
 
     .left-panel,
     .right-panel {
@@ -183,10 +179,9 @@
   }
 }
 
-/* Mobile landscape specific fixes */
 @media screen and (max-height: 600px) and (orientation: landscape) {
   .dashboard {
-    padding-top: 50px; /* Smaller top padding in landscape */
+    padding-top: 50px;
     min-height: calc(100vh - 50px);
 
     .left-panel,
@@ -217,7 +212,6 @@ h2 {
   box-sizing: border-box;
 }
 
-/* Mobile typography adjustments */
 @media screen and (max-width: $breakpoint-sm) {
   h2 {
     font-size: 1.125rem;

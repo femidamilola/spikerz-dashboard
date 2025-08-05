@@ -35,39 +35,15 @@ export type NodeGroup = {
 export class AssetDiagram implements AfterViewInit {
   private destroyRef = inject(DestroyRef);
 
-  // View references
   diagramWrapper =
     viewChild.required<ElementRef<HTMLElement>>('diagramWrapper');
 
-  // Dynamic sizing properties
   private containerWidth = 0;
-  private containerHeight = 0;
-  private nodeWidth = 100; // Approximate node width
-  private minimumArrowWidth = 60;
+  private nodeWidth = 100;
   private calculatedArrowWidth = 120;
   private readonly ARROW_COLOR = 'var(--color-arrow)';
-  private readonly ARROW_STROKE_WIDTH = '2';
   private readonly DEFAULT_ARROW_IMAGE = '/images/arrow.png';
   private readonly SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
-
-  private readonly MULTIPLE_NODES_SVG_DIMENSIONS = {
-    width: '350',
-    height: '220',
-    viewBox: '0 0 350 220',
-  };
-
-  private readonly SINGLE_NODE_SVG_DIMENSIONS = {
-    width: '59',
-    height: '6',
-    viewBox: '0 0 59 6',
-  };
-
-  private readonly MARKER_DIMENSIONS = {
-    markerWidth: '10',
-    markerHeight: '7',
-    refX: '10',
-    refY: '3.5',
-  };
 
   nodeGroups: NodeGroup[] = [
     {
@@ -272,39 +248,29 @@ export class AssetDiagram implements AfterViewInit {
   private calculateDimensions() {
     const wrapper = this.diagramWrapper().nativeElement;
     this.containerWidth = wrapper.clientWidth;
-    this.containerHeight = wrapper.clientHeight;
 
-    // Calculate arrow width based strictly on available container width
     const totalNodes = this.nodeGroups.length;
     const totalNodeWidth = totalNodes * this.nodeWidth;
-    const totalArrows = totalNodes - 1;
 
-    // Account for padding (48px total: 24px left + 24px right)
     const availableWidth = this.containerWidth - 48;
 
-    // Calculate space needed for different arrow types
-    const singleArrowMinWidth = 40; // Reduce minimum for better mobile experience
+    const singleArrowMinWidth = 40;
     let totalArrowMultiplier = 0;
 
-    // Calculate total multiplier based on actual arrow types
     for (let i = 1; i < this.nodeGroups.length; i++) {
       const targetGroup = this.nodeGroups[i];
       if (targetGroup.nodes.length > 1) {
-        // Double arrow needs 2x the width
         totalArrowMultiplier += 2;
       } else {
-        // Single arrow
         totalArrowMultiplier += 1;
       }
     }
 
-    // Calculate available space for arrows after accounting for nodes
     const availableSpaceForArrows = Math.max(
       0,
       availableWidth - totalNodeWidth
     );
 
-    // Calculate base arrow width, ensuring it doesn't go below minimum
     if (totalArrowMultiplier > 0) {
       this.calculatedArrowWidth = Math.max(
         singleArrowMinWidth,
@@ -337,7 +303,6 @@ export class AssetDiagram implements AfterViewInit {
     const targetGroup = this.nodeGroups[targetGroupIndex];
     const targetNodeCount = targetGroup.nodes.length;
 
-    // Ensure we have calculated dimensions before generating arrows
     if (this.calculatedArrowWidth === 120) {
       this.calculateDimensions();
     }
@@ -357,7 +322,6 @@ export class AssetDiagram implements AfterViewInit {
     ) {
       const targetGroup = this.nodeGroups[targetGroupIndex];
       if (targetGroup.nodes.length > 1) {
-        // Double arrow gets 2x the width
         return this.calculatedArrowWidth * 2;
       }
     }
@@ -365,14 +329,13 @@ export class AssetDiagram implements AfterViewInit {
   }
 
   private createMultipleNodesArrowSvg(): string {
-    const arrowWidth = this.calculatedArrowWidth * 2; // Double arrows are 2x wider
+    const arrowWidth = this.calculatedArrowWidth * 2;
     const originalWidth = 208;
     const originalHeight = 110;
     const scaleX = arrowWidth / originalWidth;
-    const scaledHeight = originalHeight; // Keep original height proportions
+    const scaledHeight = originalHeight;
     const viewBox = `0 0 ${arrowWidth} ${scaledHeight}`;
 
-    // Scale the original design coordinates
     const scale = scaleX;
 
     return `<svg width="${arrowWidth}" height="${scaledHeight}" viewBox="${viewBox}" fill="none" xmlns="${
@@ -436,10 +399,8 @@ export class AssetDiagram implements AfterViewInit {
     const arrowHeight = 6;
     const viewBox = `0 0 ${arrowWidth} ${arrowHeight}`;
 
-    // Scale the arrow path to fit the calculated width
-    const scaleX = arrowWidth / 59; // Original width was 59
-    const arrowHeadX = arrowWidth - 4; // Position arrowhead at the end
-    const arrowBodyEnd = arrowWidth - 4; // End of arrow body
+    const arrowHeadX = arrowWidth - 4;
+    const arrowBodyEnd = arrowWidth - 4;
 
     return `<svg width="${arrowWidth}" height="${arrowHeight}" viewBox="${viewBox}" fill="none" xmlns="${
       this.SVG_NAMESPACE

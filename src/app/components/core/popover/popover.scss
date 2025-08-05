@@ -24,7 +24,6 @@
   overflow: hidden;
 }
 
-// Vulnerability Popover Styles
 .vulnerability-popover-content {
   display: flex;
   flex-direction: column;
@@ -32,11 +31,6 @@
 }
 
 .vulnerability-header-section {
-  //   background-color: #ef4444;
-  //   color: white;
-  //   padding: 16px 20px;
-  //   text-align: center;
-
   .vulnerability-title {
     width: 100%;
     max-width: 210px;
@@ -57,7 +51,6 @@
   margin-left: 51px;
   margin-right: 9px;
   gap: 3px;
-  //   padding: 20px;
 
   .vulnerability-data-item {
     background-color: var(--color-red-50);
@@ -74,10 +67,6 @@
 }
 
 .vulnerability-footer-section {
-  //   background-color: #3b82f6;
-  //   color: white;
-  //   padding: 12px 20px;
-  //   text-align: left;
   margin-top: 13.5px;
 
   .vulnerability-footer-text {
@@ -92,7 +81,6 @@
   }
 }
 
-// Normal Popover Styles
 .normal-popover-content {
   width: 400px;
   max-width: 90vw;
@@ -211,7 +199,6 @@
   z-index: -1;
 }
 
-/* Mobile optimizations for popover */
 @media screen and (max-width: 768px) {
   .popover {
     max-width: calc(100vw - 2rem);

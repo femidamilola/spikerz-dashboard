@@ -19,7 +19,7 @@ export type PopoverType = 'vulnerability' | 'normal';
 
 export interface PopoverText {
   color?: string;
-  value: string | null; // null represents a forced break
+  value: string | null;
 }
 
 export interface PopoverInfo {
@@ -47,20 +47,16 @@ export class Popover {
   private destroyRef = inject(DestroyRef);
   private sanitizer = inject(DomSanitizer);
 
-  // Inputs
   data = input.required<PopoverData>();
   referenceElement = input.required<HTMLElement>();
   isVisible = input.required<boolean>();
 
-  // Outputs
   onClose = output<void>();
 
-  // View references
   popoverElement = viewChild.required<ElementRef<HTMLElement>>('popover');
   arrowElement = viewChild<ElementRef<HTMLElement>>('arrow');
 
   constructor() {
-    // Update position when visibility or reference element changes
     effect(() => {
       if (this.isVisible() && this.referenceElement()) {
         this.updatePosition();
@@ -90,13 +86,11 @@ export class Popover {
       }
     );
 
-    // Apply position to popover
     Object.assign(popoverEl.style, {
       left: `${x}px`,
       top: `${y}px`,
     });
 
-    // Position arrow if it exists
     if (arrowEl && middlewareData.arrow) {
       const { x: arrowX, y: arrowY } = middlewareData.arrow;
 

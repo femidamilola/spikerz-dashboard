@@ -14,18 +14,17 @@
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
-    display: none; /* WebKit */
+    display: none;
   }
 
   .risk-table {
     width: 100%;
     border-collapse: collapse;
-    // min-width: 600px; /* Minimum width for table readability */
-    flex: 1; /* Allow table to grow within container */
+    flex: 1;
 
     thead {
       th {
@@ -169,16 +168,15 @@
   }
 }
 
-/* Mobile optimizations for table */
 @media screen and (max-width: $breakpoint-sm) {
   .contextual-risk-container {
     overflow-x: auto;
-    min-height: 300px; /* Smaller minimum height on mobile */
-    max-height: none; /* Remove max height on mobile */
+    min-height: 300px;
+    max-height: none;
 
     .risk-table {
       font-size: 12px;
-      min-width: 480px; /* Smaller minimum width for mobile */
+      min-width: 480px;
 
       thead th {
         padding: 8px 12px;
@@ -238,7 +236,7 @@
   .contextual-risk-container {
     .risk-table {
       font-size: 11px;
-      min-width: 420px; /* Even smaller for very small screens */
+      min-width: 420px;
 
       thead th {
         padding: 6px 8px;

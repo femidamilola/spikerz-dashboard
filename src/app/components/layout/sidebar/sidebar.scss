@@ -181,8 +181,7 @@
   }
 }
 
-/* Mobile optimizations - Complete rewrite for mobile */
-@media screen and (max-width: $breakpoint-md) {
+@media screen and (max-width: 768px) {
   .sidebar {
     position: fixed;
     top: 0;
@@ -296,12 +295,8 @@
       }
     }
 
-    /* Remove tooltips on mobile */
-    .nav-link[data-tooltip]:hover::after,
-    .nav-link[data-tooltip]:hover::before,
-    .user-profile-stub[data-tooltip]:hover::after,
-    .user-profile-stub[data-tooltip]:hover::before {
-      display: none !important;
+    .nav-link .tooltip {
+      display: none;
     }
   }
 }
