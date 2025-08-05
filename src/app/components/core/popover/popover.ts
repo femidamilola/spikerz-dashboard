@@ -85,7 +85,7 @@ export class Popover {
       referenceEl,
       popoverEl,
       {
-        placement: 'top',
+        placement: 'bottom',
         middleware,
       }
     );
